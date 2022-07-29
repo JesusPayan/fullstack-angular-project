@@ -1,0 +1,16 @@
+<!-- la siguinte sentencia evalua si el boton de ocultar/mostrar es precionado haciendo uso del operador ternario. -->
+<button type="button" (click)="setHabilitar()" class="btn btn-primary my-3">{{habilitar==true?'Ocultar':'Mostrar'}}</button>
+<div class="card">
+    <div class="card-header bg-dark text-bg-secondary">
+        Listado de Cursos.
+    </div>
+    <!-- *ngIf como los if en diferentes lenguajes de programacion sirve para hacer una comparacion de una e
+    expresion logica. -->
+    <ul class="list-group" *ngIf="habilitar == true">
+        <!-- *ngFor sirve como en java o cualquier otro lengua de programacion para repetir una sentencia n veces
+        se utiliza la sentencia let para declarar la variable que se utilizara en este caso es curso de un arreglo de strings -->
+        <li class="list-group-item text-primary" *ngFor="let curso of listaCurso ">
+           {{curso}}
+        </li>
+    </ul>
+</div>

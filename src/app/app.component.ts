@@ -1,3 +1,4 @@
+import { LeadingComment } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fullstack-angular-project';
+  // en esta parte se pueden agregar las variables que se utilizan.
+  title:string = 'Este es un Curso de Ejemplo de FullStack';
+  curso: string = 'Spring 5 con Angular 7';
+  profesor: string = 'FullStack Developer Jesus A. Hdez Payan';
 }
