@@ -4,5 +4,5 @@ export class Cliente {
     apellido:string = "";
     fecha:string = "";
     email:string = "";
-    edad:number = 0;
+   
 }
