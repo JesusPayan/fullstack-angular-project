@@ -9,16 +9,29 @@ import { ClienteService } from './cliente.service';
 })
 export class ClientesComponent implements OnInit {
   /*Declara un arreglo de tipo cliente */
-  clientes: Cliente[] = [];
+  clientes: Cliente[]=[];
   habilitar:boolean = true;
-  /**Se inyecta la dependencia de Cliente service */
+  /**Se inyecta la dependencia de Cliente service, crea un objeto tipo cliente service para posterior usarlo */
   constructor(private clienteService:ClienteService) { }
 
   
-  ngOnInit(): void {
+  ngOnInit() {
     /*Se manda llamar el metodo getClientes del servicio cliente Service. */
-    this.clientes = this.clienteService.getClientes();
+
+    /*Con .subscribe se subscribe al observador del cliente. */
+    //  this.clienteService.getClientes().subscribe(
+    //     this.clientes => this.clientes = this.clientes
+    //  );
   
+    this.clienteService.getClientes().subscribe(
+      /*se subscribe el observador */
+      /* Se almacena en atributo clientes, lo que se obtiene desde el clienteService
+       en este caso el listado de clientes. */
+     clientes => this.clientes = clientes
+     /* esta tambien es una dincion anomina*/
+    )
+
+
   }
 
   setHabilitar():void{

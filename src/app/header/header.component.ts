@@ -7,8 +7,8 @@ import { AppComponent } from '../app.component';
 })
 export class HeaderComponent implements OnInit {
   title: string ='Menu'
-  home:string = 'Home'
-  history:string = "History";
+  home:string = 'Directiva'
+  history:string = "Cliente";
   // 
   constructor() { }
 
